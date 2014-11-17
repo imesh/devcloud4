@@ -48,6 +48,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       ## Map host only networks and the adapters
       xenserver.vm.provider 'virtualbox' do |v|
+        v.customize ['modifyvm', :id, '--memory', 5120]
+        v.customize ['modifyvm', :id, '--cpus', 8]
         v.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
         v.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
         v.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
@@ -80,6 +82,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       ## Map host only networks and the adapters
       xenserver.vm.provider 'virtualbox' do |v|
+        v.customize ['modifyvm', :id, '--memory', 5120]
+        v.customize ['modifyvm', :id, '--cpus', 8]
         v.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
         v.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
         v.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
